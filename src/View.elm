@@ -114,22 +114,23 @@ renderGameButton state =
     in
         button
             [ style
-                [ "background" => "#34495f"
-                , "border" => "0"
-                , "bottom" => "30px"
-                , "color" => "#fff"
+                [ "background" => "transparent"
+                , "border" => "1px solid black"
+                , "border-radius" => "20px"
+                , "color" => "black"
                 , "cursor" => "pointer"
                 , "display" => "block"
                 , "font-family" => "Helvetica, Arial, sans-serif"
                 , "font-size" => "18px"
                 , "font-weight" => "300"
                 , "height" => "60px"
-                , "left" => "30px"
                 , "line-height" => "60px"
                 , "outline" => "none"
                 , "padding" => "0"
-                , "position" => "absolute"
                 , "width" => "120px"
+                , "position" => "fixed"
+                , "top" => "20px"
+                , "right" => "20px"
                 ]
             , onClick action
             ]
@@ -164,7 +165,6 @@ renderPanel { score, lines, next, state } =
                 ]
             ]
             [ renderNext next ]
-        , renderGameButton state
         ]
 
 
@@ -206,6 +206,8 @@ renderControls =
             , "bottom" => "0"
             , "left" => "0"
             ]
+        , onTouchEnd Actions.UnlockButtons
+        , onMouseUp Actions.UnlockButtons
         ]
         [ div []
             [ renderControlButton "←"
@@ -294,4 +296,5 @@ view model =
             , renderInfo model.state
             ]
         , renderControls
+        , renderGameButton model.state
         ]
