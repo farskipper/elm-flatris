@@ -182,13 +182,13 @@ renderControlButton txt attrs =
             , "font-family" => "Helvetica, Arial, sans-serif"
             , "font-size" => "24px"
             , "font-weight" => "300"
-            , "height" => "100px"
-            , "line-height" => "100px"
-            , "margin" => "20px"
+            , "height" => "80px"
+            , "line-height" => "80px"
+            , "margin" => "10px"
             , "outline" => "none"
             , "padding" => "0"
-            , "width" => "100px"
-            , "border-radius" => "100px"
+            , "width" => "80px"
+            , "border-radius" => "80px"
             , "border" => "1px solid black"
             ]
             :: attrs
@@ -213,7 +213,7 @@ renderControls =
         , onTouchEnd Actions.UnlockButtons
         , onMouseUp Actions.UnlockButtons
         ]
-        [ div [ style [ ( "flex", "0 1" ), ( "min-width", "300px" ) ] ]
+        [ div [ style [ ( "flex", "0 1" ), ( "min-width", "204px" ) ] ]
             [ renderControlButton "←"
                 [ onMouseDown (Actions.MoveLeft True)
                 , onMouseUp (Actions.MoveLeft False)
@@ -227,7 +227,7 @@ renderControls =
                 , onTouchEnd (Actions.MoveRight False)
                 ]
             ]
-        , div [ style [ ( "flex", "0 1" ), ( "min-width", "300px" ) ] ]
+        , div [ style [ ( "flex", "0 1" ), ( "min-width", "204px" ) ] ]
             [ renderControlButton "↻"
                 [ onMouseDown (Actions.Rotate True)
                 , onMouseUp (Actions.Rotate False)

@@ -14191,13 +14191,13 @@ var _w0rm$elm_flatris$View$renderControlButton = F2(
 															_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'font-weight', '300'),
 															_1: {
 																ctor: '::',
-																_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'height', '100px'),
+																_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'height', '80px'),
 																_1: {
 																	ctor: '::',
-																	_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'line-height', '100px'),
+																	_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'line-height', '80px'),
 																	_1: {
 																		ctor: '::',
-																		_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'margin', '20px'),
+																		_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'margin', '10px'),
 																		_1: {
 																			ctor: '::',
 																			_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'outline', 'none'),
@@ -14206,10 +14206,10 @@ var _w0rm$elm_flatris$View$renderControlButton = F2(
 																				_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'padding', '0'),
 																				_1: {
 																					ctor: '::',
-																					_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'width', '100px'),
+																					_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'width', '80px'),
 																					_1: {
 																						ctor: '::',
-																						_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'border-radius', '100px'),
+																						_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'border-radius', '80px'),
 																						_1: {
 																							ctor: '::',
 																							_0: A2(_w0rm$elm_flatris$View_ops['=>'], 'border', '1px solid black'),
@@ -14304,7 +14304,7 @@ var _w0rm$elm_flatris$View$renderControls = A2(
 						_0: {ctor: '_Tuple2', _0: 'flex', _1: '0 1'},
 						_1: {
 							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'min-width', _1: '300px'},
+							_0: {ctor: '_Tuple2', _0: 'min-width', _1: '204px'},
 							_1: {ctor: '[]'}
 						}
 					}),
@@ -14377,7 +14377,7 @@ var _w0rm$elm_flatris$View$renderControls = A2(
 							_0: {ctor: '_Tuple2', _0: 'flex', _1: '0 1'},
 							_1: {
 								ctor: '::',
-								_0: {ctor: '_Tuple2', _0: 'min-width', _1: '300px'},
+								_0: {ctor: '_Tuple2', _0: 'min-width', _1: '204px'},
 								_1: {ctor: '[]'}
 							}
 						}),
