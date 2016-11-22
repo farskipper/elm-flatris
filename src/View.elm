@@ -279,14 +279,16 @@ elm-flatris is open source on
 view : Model -> Html Action
 view model =
     div
-        [ style []
+        [ style
+            [ "padding" => "10px"
+            , "overflow" => "hidden"
+            ]
         , onTouchEnd Actions.UnlockButtons
         , onMouseUp Actions.UnlockButtons
         ]
         [ div
             [ style
-                [ "height" => "680px"
-                , "margin" => "auto"
+                [ "margin" => "auto"
                 , "position" => "relative"
                 , "width" => "480px"
                 ]
