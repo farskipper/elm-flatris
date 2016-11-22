@@ -172,8 +172,7 @@ renderControlButton : String -> List (Html.Attribute Action) -> Html Action
 renderControlButton txt attrs =
     div
         (style
-            [ "background" => "#ecf0f1"
-            , "border" => "0"
+            [ "border" => "0"
             , "color" => "#34495f"
             , "cursor" => "pointer"
             , "text-align" => "center"
@@ -183,12 +182,14 @@ renderControlButton txt attrs =
             , "font-family" => "Helvetica, Arial, sans-serif"
             , "font-size" => "24px"
             , "font-weight" => "300"
-            , "height" => "60px"
-            , "line-height" => "60px"
-            , "margin" => "20px 20px 0 0"
+            , "height" => "100px"
+            , "line-height" => "100px"
+            , "margin" => "20px"
             , "outline" => "none"
             , "padding" => "0"
-            , "width" => "60px"
+            , "width" => "100px"
+            , "border-radius" => "100px"
+            , "border" => "1px solid black"
             ]
             :: attrs
         )
@@ -199,35 +200,40 @@ renderControls : Html Action
 renderControls =
     div
         [ style
-            [ "height" => "80px"
+            [ "height" => "140px"
+            , "position" => "fixed"
+            , "right" => "0"
+            , "bottom" => "0"
             , "left" => "0"
-            , "position" => "absolute"
-            , "top" => "600px"
             ]
         ]
-        [ renderControlButton "↻"
-            [ onMouseDown (Actions.Rotate True)
-            , onMouseUp (Actions.Rotate False)
-            , onTouchStart (Actions.Rotate True)
-            , onTouchEnd (Actions.Rotate False)
+        [ div []
+            [ renderControlButton "←"
+                [ onMouseDown (Actions.MoveLeft True)
+                , onMouseUp (Actions.MoveLeft False)
+                , onTouchStart (Actions.MoveLeft True)
+                , onTouchEnd (Actions.MoveLeft False)
+                ]
+            , renderControlButton "→"
+                [ onMouseDown (Actions.MoveRight True)
+                , onMouseUp (Actions.MoveRight False)
+                , onTouchStart (Actions.MoveRight True)
+                , onTouchEnd (Actions.MoveRight False)
+                ]
             ]
-        , renderControlButton "←"
-            [ onMouseDown (Actions.MoveLeft True)
-            , onMouseUp (Actions.MoveLeft False)
-            , onTouchStart (Actions.MoveLeft True)
-            , onTouchEnd (Actions.MoveLeft False)
-            ]
-        , renderControlButton "→"
-            [ onMouseDown (Actions.MoveRight True)
-            , onMouseUp (Actions.MoveRight False)
-            , onTouchStart (Actions.MoveRight True)
-            , onTouchEnd (Actions.MoveRight False)
-            ]
-        , renderControlButton "↓"
-            [ onMouseDown (Actions.Accelerate True)
-            , onMouseUp (Actions.Accelerate False)
-            , onTouchStart (Actions.Accelerate True)
-            , onTouchEnd (Actions.Accelerate False)
+        , div [ style [ "float" => "right" ] ]
+            [ renderControlButton "↻"
+                [ onMouseDown (Actions.Rotate True)
+                , onMouseUp (Actions.Rotate False)
+                , onTouchStart (Actions.Rotate True)
+                , onTouchEnd (Actions.Rotate False)
+                ]
+            , renderControlButton "↓"
+                [ onMouseDown (Actions.Accelerate True)
+                , onMouseUp (Actions.Accelerate False)
+                , onTouchStart (Actions.Accelerate True)
+                , onTouchEnd (Actions.Accelerate False)
+                ]
             ]
         ]
 
@@ -271,7 +277,7 @@ elm-flatris is open source on
 view : Model -> Html Action
 view model =
     div
-        [ style [ "padding" => "30px 0" ]
+        [ style []
         , onTouchEnd Actions.UnlockButtons
         , onMouseUp Actions.UnlockButtons
         ]
@@ -284,8 +290,8 @@ view model =
                 ]
             ]
             [ renderWell model
-            , renderControls
             , renderPanel model
             , renderInfo model.state
             ]
+        , renderControls
         ]
