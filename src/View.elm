@@ -200,16 +200,20 @@ renderControls : Html Action
 renderControls =
     div
         [ style
-            [ "height" => "140px"
-            , "position" => "fixed"
-            , "right" => "0"
-            , "bottom" => "0"
-            , "left" => "0"
+            [ ( "position", "fixed" )
+            , ( "top", "0" )
+            , ( "right", "0" )
+            , ( "bottom", "0" )
+            , ( "left", "0" )
+            , ( "display", "flex" )
+            , ( "flex-flow", "row nowrap" )
+            , ( "align-items", "center" )
+            , ( "justify-content", "space-between" )
             ]
         , onTouchEnd Actions.UnlockButtons
         , onMouseUp Actions.UnlockButtons
         ]
-        [ div []
+        [ div [ style [ ( "flex", "0 1" ), ( "min-width", "300px" ) ] ]
             [ renderControlButton "←"
                 [ onMouseDown (Actions.MoveLeft True)
                 , onMouseUp (Actions.MoveLeft False)
@@ -223,7 +227,7 @@ renderControls =
                 , onTouchEnd (Actions.MoveRight False)
                 ]
             ]
-        , div [ style [ "float" => "right" ] ]
+        , div [ style [ ( "flex", "0 1" ), ( "min-width", "300px" ) ] ]
             [ renderControlButton "↻"
                 [ onMouseDown (Actions.Rotate True)
                 , onMouseUp (Actions.Rotate False)
